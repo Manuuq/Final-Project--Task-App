@@ -1,6 +1,6 @@
 <!-- COMPONENTE BOILERPLATE -->
  
-  <template>
+<template>
 
   <div class="container">
     <img src="" alt="">
