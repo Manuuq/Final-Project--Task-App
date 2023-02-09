@@ -35,6 +35,5 @@ onMounted(async () => {
 
 <style scoped>
 
-</style>>
-
 </style>
+
