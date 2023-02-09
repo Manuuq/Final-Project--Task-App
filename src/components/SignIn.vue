@@ -36,7 +36,4 @@ const signIn = async () => {
 }
 
 
-</style>>
-
-
 </style>
