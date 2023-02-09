@@ -3,6 +3,7 @@
   <template>
 
   <div class="container">
+    <img src="" alt="">
     <h3 class="header-title">Log In to ToDo App</h3>
     <p class="header-subtitle">Estamos en la ruta de login. Aquí deberíais crear un form con la lógica correspondiente para que este permita al usuario loguearse con su email y su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)</p>
     <p>Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="sign-up-link"/></p>
@@ -23,4 +24,19 @@ const signIn = async () => {
 };
 </script>
 
-<style></style>
+<style scoped>
+
+.container{
+  background-color: aqua;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+</style>>
+
+
+</style>
