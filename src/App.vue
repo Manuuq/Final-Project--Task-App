@@ -33,7 +33,11 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
+<style>
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
 
 </style>
-

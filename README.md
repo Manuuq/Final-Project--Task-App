@@ -94,36 +94,29 @@ Tecnologias utilizadas para el desarrollo:
 
 ## Roadmap
 
-#### Backlog
 
-- [ ] Ej - Tarea a completar y mover a su respectivo dia de ejecucion
+###### Lunes 6, Febrero 2023
+
+- [x] - Plafinicación de proyecto, definir tareas a realizar y los componentes necesarios.
+- [x] - Set up Visual Code, Versel, Supabase, Git Hub.
 
 
-#### Day One
+###### Martes 7, Febrero 2023
 
-###### Lunes 23, Enero 2023
+-[x] - Crear funcion Registrarse, Iniciar sesion. Implementar logica correspondiente. 
+-[x] - Funcion de " salir de la sesión". Implementar logica correspondiente.  
 
-- [x] Ej - Dar comienzo al archivo Readme, explicando acerca de que trata el proyecto y cual es su objetivo.
-- [x] Ej - Segmentar el modelo de website propuesto, identificar los componentes del archivo HTML y generar el plan de proyecto.
+###### Miercoles 8, Febrero 2023
 
-#### Day Two
+-[x] - Crear Navigation Bar, agregar un poco de estilo para una mejor visualizacion. 
+-[] - Trabajar seccion " tareas" : crear nueva tarea, editar, marcar como completada, eliminar. 
+-[] - 
 
--[x] -Dar estructura HTML al archivo index.html
--[] -Comenzar a dar estilo a la estructura HTML utilizando una hoja CSS
+###### Jueves 9, Febrero 2023
 
-###### Martes 24, Enero 2023
-
-#### Day Three
--[] - Acabar estilo en CSS al archivo Index.html
--[x] - Estructurar archivo contact-us.html y project.html
--[] - Dar estilo en CSS a los archivos html mencionados en tarea anterior.
-
-###### Miercoles 25, Enero 2023
-
-#### Day Four
--[] - Acabar estilo en CSS al archivo Index.html
--[] - Estructurar archivo contact-us.html y project.html
--[] - Dar estilo en CSS a los archivos html mencionados en tarea anterior.
+-[] - 
+-[] - 
+-[] - 
 
 ###### Jueves 26, Enero 2023
 
