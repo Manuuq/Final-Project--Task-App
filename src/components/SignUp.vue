@@ -66,22 +66,17 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
-
 // Route Variables
 const route = "/auth/login";
 const buttonText = "Sign In";
-
 // Input Fields
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
-
 // Error Message
 const errorMsg = ref("");
-
 // Router to push user once SignedUp to Log In
 const redirect = useRouter();
-
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const signUp = async () => {
   if (password.value === confirmPassword.value) {

@@ -1,38 +1,73 @@
 <template>
-  <div class="container2">
-    <h3>{{ task.title }}</h3>
-    <p>{{ task.description }}</p>
-    <!-- <button @click=>Marcar como completada</button> -->
+  <div class="task-item-fondo">
+    <div class="card">
+      <div class="card2">
+        <!-- los case hacen relacion a el boton de completar -->
+        <h3 :class="props.task.is_complete ? 'done' : 'pending'">
+          {{ task.title }}
+        </h3>
+        <p :class="props.task.is_complete ? 'done' : 'pending'">
+          {{ task.description }}
+        </p>
+        <!-- <button @click=>Marcar como completada</button> -->
+        <div class="buttons">
+          <button @click="completeTask" class="botton1">
+            Completar
+            <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
+          </button>
 
-    <!-- boton de borrar tareas -->
-    <button @click="deleteTask">Borrar {{ task.title }}</button>
+          <!-- boton de borrar tareas -->
+          <button @click="showModalToggle" class="botton1">Delete</button>
 
-    <!-- boton para editar tareas -->
-    <button @click="inputToggle">Editar {{ task.title }}</button>
-    <div v-if="showInput">
-      <div>
-        <p>Escribe un título</p>
-        <input type="text" v-model="newTitle" placeholder="Insert title..." />
+          <div class="modal" v-if="showModal">
+            <h2>Seguro que quieres borrar esta tarea?</h2>
+            <button @click="deleteTask">Si quiero!</button>
+            <button @click="showModalToggle">No, mejor no!</button>
+          </div>
+
+          <!-- chatgpt mdal ------------------------------------------------------------------ -->
+
+          <!-- fin chatgpt modal ---------------------------------------------------------------->
+
+          <!-- boton para editar tareas -->
+          <button @click="inputToggle" class="botton1">
+            <p>Editar {{ task.title }}</p>
+          </button>
+          <div v-if="showInput">
+            <div>
+              <p>Escribe un título</p>
+              <input
+                type="text"
+                v-model="newTitle"
+                placeholder="Insert title..."
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                v-model="newDescription"
+                placeholder="Insert description..."
+              />
+            </div>
+            <button @click="sendData"><p>Enviar datos</p></button>
+          </div>
+        </div>
       </div>
-      <div>
-        <p>Escribe una descripción</p>
-        <input
-          type="text"
-          v-model="newDescription"
-          placeholder="Insert description..."
-        />
-      </div>
-      <button @click="sendData">Enviar datos</button>
     </div>
   </div>
 </template>
-  
-  <script setup>
+
+<script setup>
+
+
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
+
+// funcion para refrescar al editar, borrar o completar
+const emit = defineEmits(["childComplete", "editChild"]);
+// const emit = defineEmits(["updateTask"]);
 const taskStore = useTaskStore();
-const emit = defineEmits(["updateTask"]);
 const props = defineProps({
   task: Object,
 });
@@ -42,11 +77,22 @@ const newDescription = ref("");
 function inputToggle() {
   showInput.value = !showInput.value;
 }
+//funcion para completar tareas
+const completedTask = () => {
+  emit("childComplete", props.task);
+};
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
   emit("updateTask");
 };
+//funcion para mostrar el modal para el delete
+const showModal = ref(false);
+const showModalToggle = () => {
+  showModal.value = !showModal.value;
+};
+
+
 const showErrorMess = ref(false);
 const errorMess = ref(null);
 //funcion para editar las tareas
@@ -54,25 +100,38 @@ const sendData = async () => {
   if (newTitle.value.length < 4 || newDescription.value.length < 4) {
     showErrorMess.value = true;
     errorMess.value =
-      "The task title or description is empty or just too short. (That's what she said)";
+      "El titulo o la descripción de la tarea son muy cortos! Escribe algo más!";
     setTimeout(() => {
       showErrorMess.value = false;
     }, 5000);
   } else {
     taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
-    emit("updateTask");
+    showInput.value = !showInput.value;
+    emit("editChild", newTaskEdited);
   }
 };
+
+
+
 </script>
-  
-  <style>
-.container2 {
-  width: 20vw;
+
+<style>
+.done {
+  /* color: green; */
+  text-decoration: line-through;
+}
+.pending {
+  /* color: red; */
+  text-decoration: none;
+}
+.buttons {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  /* align-items: center; */
-  border: solid 1px red;
+  flex-wrap: wrap;
+  gap: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
 }
 </style>
   

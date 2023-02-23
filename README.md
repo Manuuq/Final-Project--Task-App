@@ -83,11 +83,13 @@ Tecnologias utilizadas para el desarrollo:
     <li> CSS 3 
     <li> Javasript
     <li> HTML 5
+</ol>
 <br>
 
 <h6> Frameworks</h6>
 <ol>
     <li> Vue.js
+</ol>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -109,20 +111,39 @@ Tecnologias utilizadas para el desarrollo:
 ###### Miercoles 8, Febrero 2023
 
 -[x] - Crear Navigation Bar, agregar un poco de estilo para una mejor visualizacion. 
--[] - Trabajar seccion " tareas" : crear nueva tarea, editar, marcar como completada, eliminar. 
+-[x] - Agregar seccion " tareas"
 -[] - 
 
 ###### Jueves 9, Febrero 2023
 
--[] - 
--[] - 
--[] - 
+-[x] - Trabajar input de " tareas"
+-[x] - Agregar funcion boton " nueva tarea"
+-[] - Comenzar boton "tarea realizada"
 
-###### Jueves 26, Enero 2023
 
-#### Day Five
+###### Viernes 10, Febrero 2023
 
-###### Viernes 27, Enero 2023
+------------------------------------------------------
+
+###### Lunes 13, Febrero 2023
+
+- [x] - Acabar funcion "nueva tarea"
+- [x] - Trabajar  boton tarea realizada
+- [] - Comenzar boton "editar tarea"
+-[x] - Dar algo de estilo a Home Page
+
+
+###### Martes 7, Febrero 2023
+
+-[x] - Trabajar funcion "editar tarea"
+-[x] - Funcionalidad boton "borrar tarea"
+-[]  - Trabajar "perfil usuario" en "Home"
+
+###### Miercoles 8, Febrero 2023
+
+-[x] -
+-[x] - 
+-[] - 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

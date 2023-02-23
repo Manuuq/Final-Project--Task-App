@@ -1,28 +1,27 @@
 <template>
   <div class="wrapper">
     <Nav />
-    <!-- <div class="content">  -->
-    <!-- <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link> -->
-    <!-- </div> -->
-    <!-- En la linea de update task, podría ir @deleteTask="getTasks" -->
-
     <NewTask @addTitle="getTasks" />
-    <h1>Tareas:</h1>
-    <div>
+    <!-- <h1>Tareas:</h1> -->
+
+    <!-- Cajitas de las task abajo -->
+    <div class="boxflex">
       <TaskItem
         v-for="task in tasks"
         :key="task.id"
         :task="task"
         @updateTask="getTasks"
+        @childComplete="completeTaskSupabase"
       />
     </div>
+
     <FooterComp />
+  
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onUpdated } from "vue";
 import { useTaskStore } from "../stores/task";
 import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
@@ -31,21 +30,50 @@ import TaskItem from "../components/TaskItem.vue";
 import FooterComp from '../components/Footer.vue'
 
 const taskStore = useTaskStore();
-
 // Variable para guardar las tareas de supabase
 const tasks = ref([]);
-
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async () => {
   tasks.value = await taskStore.fetchTasks();
 };
-
 getTasks();
+onUpdated(() => {
+getTasks();
+});
+const completeTaskSupabase = async (taskObject) => {
+  console.log("click");
+  console.log(taskObject); // esto es un objeto que incluye description, id, inserted_at, is_complete, title, user_id
+  console.log(taskObject.id);
+  console.log(taskObject.is_complete); //false
+  let changeTaskBooleanValue = !taskObject.is_complete;
+  let taskId = taskObject.id;
+  await taskStore.completeTask(changeTaskBooleanValue, taskId);
+  
+}
 </script>
 
-<style>
-</style>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolore quidem illum. Officia autem ea aperiam, quos rerum esse, quod assumenda corrupti nemo magni aliquam natus deserunt molestiae totam laboriosam.
 
+<style>
+/* Esta linea es las cajitas de las task */
+.boxflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  height: auto;
+  background-image: url("../../assets/fondotaskitem.png") ;
+  background-size:cover;
+  background-attachment: fixed;
+  padding-top: 85vh;
+  padding-bottom: 15vh;
+  /* background-image: url("../../assets/mar-de-soledad_1920x1080_xtrafondos.com.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -2; */
+  /* border: solid 1px red; */
+}
+</style>
 <!-- 
 **Hints**
 1. ref() is used here!
