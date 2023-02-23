@@ -1,10 +1,11 @@
 <!--
 git add . && git commit -m "mensaje referencial" && git push origin main
 
-
+prueba manu
 
 
 <!-- Por favor no borrar este elemeno, ayuda al elemento "back to top" -->
+prueba manu
 
 <a name="readme-top"></a>
 
@@ -141,9 +142,46 @@ Tecnologias utilizadas para el desarrollo:
 
 ###### Miercoles 8, Febrero 2023
 
--[x] -
+-[x] -Trabajar "perfil usuario"
+-[x] - Comenzar estilo Sign in, Sign Up
+
+
+###### Jueves 9, Febrero 2023
+
+-[x] - Continuar estilado Sign In, Sign Up
+-[x] - Revisar implementacion " Clock"
+-[] - 
+
+###### Viernes 10, Febrero 2023
+
+-[x] - Solucionar errores "editar tareas"
 -[x] - 
 -[] - 
+
+------------------------------------------------------
+
+###### Lunes 20 , Febrero 2023
+
+-[] - Solucionar no funciona "tarea realizada"
+-[x] - Trabajar "Clock"
+-[] - 
+
+###### Martes 21, Febrero 2023
+
+-[x] - Contiunar bug "tarea realizada"
+-[x] - Trabajar estilo "Home page"
+
+###### Miercoles 22, Febrero 2023
+
+-[x] -Continar estilo "Home Page"
+-[x] - Trabajar estilo "TASKS"
+-[] - Trabajar "profile", no se carga imagen
+
+###### Jueves 23, Febrero 2023
+
+-[] - Responsive aplicación 
+-[] - Trabajar "profile"
+-[] - Estilo app, retocar
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
