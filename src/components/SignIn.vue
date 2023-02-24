@@ -1,52 +1,54 @@
 <!-- COMPONENTE BOILERPLATE -->
- 
+
 <template>
-  <div class="fondo">
-    <div class="container">
-      <img src="/assets/Logo1.png" alt="Logo Task App" />
-      <h3>Bienvenido a la App de tus Tareas</h3>
-      <p>Organiza las tareas de tu dia a dia</p>
+  <div class="main">
+    <div class="app">
+      <h3>TO-DO APP</h3>
+      <p class="empezamosText">¿Empezamos?</p>
 
-      <!-- FORMULARIO -->
-      <form class="form-sign-in" @submit.prevent="signIn">
-        <div class="form">
-          <div class="form-input">
-            <label for="email" class="input-field-label" />
-            <input
-              type="email"
-              class="input-field"
-              id="email"
-              placeholder="Introduce tu correo"
-              required
-              v-model="email"
-            />
-          </div>
-          <div class="form-input">
-            <label for="password" class="input-field-label" />
-            <input
-              type="text"
-              id="password"
-              class="input-field"
-              placeholder="Introduce tu contraseña"
-              v-model="password"
-              required
-            />
-          </div>
+      <!-- inputs nuevos!!!!!!!!!!! -->
+      <form @submit.prevent="signIn">
+        <div class="signIn">
+          <input placeholder="Enter your Email" required="" type="email" v-model="email" class="input" />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label  for="email"></label>
+        </div>
 
-          <!-- REGISTRARSE / SIGN UP -->
-          <button type="submit" class="registrarse">Iniciar sesión</button>
-          <p>
-            No tienes una cuenta?
+        <div class="passInput">
+          <input placeholder="Password" type="password" v-model="password" class="input" />
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label for="password"></label>
+        </div>
+        <div>
+          <button data-text="Awesome" class="button">
+            <span class="actual-text">&nbsp;Ingresar&nbsp;</span>
+            <span class="hover-text" aria-hidden="true"
+              >&nbsp;Ingresar&nbsp;</span
+            >
+          </button>
+          <!--<button class="fancy" type="submit">
+              boton animado 
+            <span class="top-key"></span>
+            <span class="text">Iniciar Sesión</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span> 
+          </button> -->
+
+          <p class="registrate">
+            ¿ Aun no te has registrado?
             <PersonalRouter
               :route="route"
               :buttonText="buttonText"
-              class="sign-up-link"
+              class="linkRegistrate"
             />
           </p>
         </div>
       </form>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
@@ -56,21 +58,16 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
-
 // Route Variables
 const route = "/auth/signup";
-const buttonText = "Sign Up";
-
+const buttonText = "¡Registrate!";
 // Input Fields
 const email = ref("");
 const password = ref("");
-
 // Error Message
 const errorMsg = ref("");
-
 // Router to push user once SignedUp to Log In
 const redirect = useRouter();
-
 // Login Function
 const signIn = async () => {
   try {
@@ -83,29 +80,12 @@ const signIn = async () => {
     }, 2500);
   }
 };
-
-// // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
-// const signIn = async () => {
-//     try {
-//       // calls the user store and send the users info to backend to logIn
-//       const user = await useUserStore().signIn(email.value, password.value);
-//       // redirects user to the homeView
-//       redirect.push({ path: "/" });
-//     } catch (error) {
-//       // displays error message
-//       errorMsg.value = error.message;
-//       // hides error message
-//       setTimeout(() => {
-//         errorMsg.value = null;
-//       }, 5000);
-//   }
-//   errorMsg.value = "error";
-// };
 </script>
 
 <style scoped>
-.fondo {
-  background-image: url("../../assets/fondo-banner-computacion-nube-ciudad-inteligente.jpg");
+/* @import url(../assets/style.css); */
+.main {
+  background-image: url("");
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -149,7 +129,7 @@ const signIn = async () => {
   margin-bottom: 1.5vw;
   border-radius: 0.7vw;
   border: 0vw;
-  padding-left:3vw;
+  padding-left: 3vw;
   padding-top: 1vw;
   padding-bottom: 1vw;
 }
@@ -166,6 +146,6 @@ const signIn = async () => {
 }
 
 .registrarse:hover {
-  background-color: rgb(68,105,175);
+  background-color: rgb(68, 105, 175);
 }
 </style>

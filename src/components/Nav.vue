@@ -3,7 +3,7 @@
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
     <img
       class="navbar-img"
-      src="/assets/logowu.png"
+      src="/assets/logowu3.png"
       alt=""
     />
     <router-link class="links-visitados" to="/"
@@ -15,23 +15,22 @@
       </a>
     </router-link>
 
-    <!-- Esto es el menú central del navegador -->
+    <!-- Esto es el menú central del navegador 
     <div class="">
       <ul>
         <li>
-          <li><router-link to="/clock">Reloj</router-link></li>
-          <!-- <button class="button-nav"> -->
-      <!--     <router-link class="links-visitados" to="/"
+          <button class="button-nav"> -
+          <router-link class="links-visitados" to="/reloj"
             ><a class="fancy" href="#">
               <span class="top-key"></span>
               <span class="text">Reloj</span>
               <span class="bottom-key-1"></span>
               <span class="bottom-key-2"></span> </a
-          ></router-link> -->
-          <!-- </button> -->
+          ></router-link>
+          
         </li>
       </ul>
-    </div>
+    </div> -->
     <div class="">
       <ul>
         <li>

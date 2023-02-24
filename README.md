@@ -106,23 +106,23 @@ Tecnologias utilizadas para el desarrollo:
 ### day-two
 ###### Martes 7, Febrero 2023
 
--[x] - Crear funcion Registrarse, Iniciar sesion. Implementar logica correspondiente. 
--[] - Funcion de " salir de la sesión". Implementar logica correspondiente.  
+- [x] - Crear funcion Registrarse, Iniciar sesion. Implementar logica correspondiente. 
+- [] - Funcion de " salir de la sesión". Implementar logica correspondiente.  
 
 ### day-three
 ###### Miercoles 8, Febrero 2023
 
--[x] - Funcion de " salir de la sesión". Implementar logica correspondiente.  
--[x] - Componente Navigation Bar, agregar un poco de estilo para una mejor visualizacion. 
--[] - Agregar seccion " tareas"
+- [x] - Funcion de " salir de la sesión". Implementar logica correspondiente.  
+- [x] - Componente Navigation Bar, agregar un poco de estilo para una mejor visualizacion. 
+- [] - Agregar seccion " tareas"
 
 ### day-four
 ###### Jueves 9, Febrero 2023
 
--[x] - Agregar seccion " tareas"
--[x] - Trabajar input de " tareas"
--[] - Agregar funcion boton " nueva tarea"
--[] - Comenzar boton "tarea realizada"
+- [x] - Agregar seccion " tareas"
+- [x] - Trabajar input de " tareas"
+- [] - Agregar funcion boton " nueva tarea"
+- [] - Comenzar boton "tarea realizada"
 
 ### day-five
 ###### Viernes 10, Febrero 2023
@@ -132,37 +132,37 @@ Tecnologias utilizadas para el desarrollo:
 ### week2-day-one
 ###### Lunes 13, Febrero 2023
 
--[x] - Agregar funcion boton " nueva tarea"
--[x] - Acabar funcion "nueva tarea"
--[] - Trabajar  boton tarea realizada
--[] - Comenzar boton "editar tarea"
--[x] - Dar algo de estilo a Home Page
+- [x] - Agregar funcion boton " nueva tarea"
+- [x] - Acabar funcion "nueva tarea"
+- [] - Trabajar  boton tarea realizada
+- [] - Comenzar boton "editar tarea"
+- [x] - Dar algo de estilo a Home Page
 
 ### week2-day-two
 ###### Martes 14, Febrero 2023
 
--[x] - Trabajar  boton tarea realizada
--[x] - Trabajar funcion "editar tarea"
--[x] - Funcionalidad boton "borrar tarea"
--[]  - Trabajar "perfil usuario" en "Home"
+- [x] - Trabajar  boton tarea realizada
+- [x] - Trabajar funcion "editar tarea"
+- [x] - Funcionalidad boton "borrar tarea"
+- []  - Trabajar "perfil usuario" en "Home"
 
 ### week2-day-three
 ###### Miercoles 15, Febrero 2023
 
--[x] -Trabajar "perfil usuario"
--[x] - Comenzar estilo Sign in, Sign Up
+- [x] -Trabajar "perfil usuario"
+- [x] - Comenzar estilo Sign in, Sign Up
 
 ### week2-day-four
 ###### Jueves 16, Febrero 2023
 
--[x] - Continuar estilado Sign In, Sign Up
--[x] - Revisar implementacion " Clock"
--[] - 
+- [x] - Continuar estilado Sign In, Sign Up
+- [x] - Revisar implementacion " Clock"
+- [] - 
 
 ### week2-day-five
 ###### Viernes 17, Febrero 2023
 
--[x] - Solucionar errores "editar tareas"
+- [x] - Solucionar errores "editar tareas"
 
 
 ------------------------------------------------------
@@ -170,34 +170,34 @@ Tecnologias utilizadas para el desarrollo:
 ### week3-day-one
 ###### Lunes 20 , Febrero 2023
 
--[] - Solucionar no funciona "tarea realizada"
--[x] - Trabajar "Clock"
--[] - 
+- [] - Solucionar no funciona "tarea realizada"
+- [x] - Trabajar "Clock"
+- [] - 
 
 ### week3-day-two
 ###### Martes 21, Febrero 2023
 
--[x] - Contiunar bug "tarea realizada"
--[x] - Trabajar estilo "Home page"
+- [x] - Contiunar bug "tarea realizada"
+- [x] - Trabajar estilo "Home page"
 
 ### week3-day-three
 ###### Miercoles 22, Febrero 2023
 
--[x] -Continar estilo "Home Page"
--[x] - Trabajar estilo "TASKS"
--[] - Trabajar "profile", no se carga imagen
+- [x] -Continar estilo "Home Page"
+- [x] - Trabajar estilo "TASKS"
+- [] - Trabajar "profile", no se carga imagen
 
 ### week3-day-four
 ###### Jueves 23, Febrero 2023
 
--[x] - Responsive aplicación 
--[] - Trabajar "profile"
--[x] - Estilo app, retocar
+- [x] - Responsive aplicación 
+- [] - Trabajar "profile"
+- [x] - Estilo app, retocar
 
 ### week3-day-five
 ###### Viernes 24, Febrero 2023
 
--[x] - Crear presentación
+- [x] - Crear presentación
 
 
 

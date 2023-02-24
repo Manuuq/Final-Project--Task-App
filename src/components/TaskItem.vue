@@ -11,27 +11,14 @@
         </p>
         <!-- <button @click=>Marcar como completada</button> -->
         <div class="buttons">
-          <button @click="completeTask" class="botton1">
-            Completar
+          <button @click="completedTask" class="botton1">
+            <img src="../../assets/TaskItem_Botons/comprobar.png" alt="Completar">
             <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
           </button>
-
-          <!-- boton de borrar tareas -->
-          <button @click="showModalToggle" class="botton1">Delete</button>
-
-          <div class="modal" v-if="showModal">
-            <h2>Seguro que quieres borrar esta tarea?</h2>
-            <button @click="deleteTask">Si quiero!</button>
-            <button @click="showModalToggle">No, mejor no!</button>
-          </div>
-
-          <!-- chatgpt mdal ------------------------------------------------------------------ -->
-
-          <!-- fin chatgpt modal ---------------------------------------------------------------->
-
+          
           <!-- boton para editar tareas -->
-          <button @click="inputToggle" class="botton1">
-            <p>Editar {{ task.title }}</p>
+          <button @click="inputToggle" class="botton2">
+            <img src="../../assets/TaskItem_Botons/editar.png" alt="Edit">
           </button>
           <div v-if="showInput">
             <div>
@@ -39,18 +26,29 @@
               <input
                 type="text"
                 v-model="newTitle"
-                placeholder="Insert title..."
+                placeholder="Introduce un nuevo titulo"
               />
             </div>
             <div>
+              <p>Escribe una descripción</p>
               <input
                 type="text"
                 v-model="newDescription"
-                placeholder="Insert description..."
+                placeholder="Introduce una nueva descripción"
               />
             </div>
             <button @click="sendData"><p>Enviar datos</p></button>
           </div>
+          <!-- boton de borrar tareas -->
+          <button @click="showModalToggle" class="botton3"> <img src="../../assets/TaskItem_Botons/papelera_borrar.png" alt="Borrar"></button>
+
+          <div class="modal" v-if="showModal">
+            <h2>Seguro que quieres borrar esta tarea?</h2>
+            <button @click="deleteTask">Si quiero!</button>
+            <button @click="showModalToggle">No, mejor no!</button>
+          </div>
+
+          
         </div>
       </div>
     </div>
@@ -58,12 +56,9 @@
 </template>
 
 <script setup>
-
-
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
-
 // funcion para refrescar al editar, borrar o completar
 const emit = defineEmits(["childComplete", "editChild"]);
 // const emit = defineEmits(["updateTask"]);
@@ -91,8 +86,6 @@ const showModal = ref(false);
 const showModalToggle = () => {
   showModal.value = !showModal.value;
 };
-
-
 const showErrorMess = ref(false);
 const errorMess = ref(null);
 //funcion para editar las tareas
@@ -110,9 +103,6 @@ const sendData = async () => {
     emit("editChild", newTaskEdited);
   }
 };
-
-
-
 </script>
 
 <style>

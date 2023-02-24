@@ -1,6 +1,5 @@
 <template>
   <div>
-    <nav-bar></nav-bar>
     <router-view />
   </div>
 </template>
@@ -11,7 +10,6 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
-import {NavBar} from "./components/Nav.vue"
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
@@ -30,16 +28,12 @@ onMounted(async () => {
   } catch (e) {
     console.log(e);
   }
-  
 });
-
 </script>
 
 <style>
 * {
-  font-family: "Roboto", sans-serif;
   margin: 0px;
   padding: 0px;
 }
 </style>
-

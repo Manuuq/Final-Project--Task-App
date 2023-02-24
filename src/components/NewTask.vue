@@ -2,21 +2,15 @@
   <div class="container-task">
     <div class="div1">
       <h1>
-        <div>¡<span class="underlined-text">Add</span> your <span class="underlined-text">new</span> task! <br /></div>
-        <!--<div>La <span class="underlined-text">organización</span> es la clave del éxito.</div> -->
+        <div>
+          ¡<span class="underlined-text">Create</span> your
+          <span class="underlined-text"></span> tasks <br />
+        </div>
+        <div>
+        
+        </div>
       </h1>
-      <p>
        
-        <span
-          style="
-            font-weight: bold;
-            text-decoration: underline;
-            text-decoration-color: #e48970;
-          "
-        >
-          </span
-        >
-      </p>
       <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
       </div>
@@ -28,14 +22,14 @@
         <input required="" type="text" v-model="name" class="input" />
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Título de la tarea</label>
+        <label class="animation1">Título de la tarea</label>
       </div>
 
       <div class="group">
         <input required="" type="text" v-model="description" class="input" />
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Descripción de la tarea</label>
+        <label class="animation2">Descripción de la tarea</label>
       </div>
     </div>
 
@@ -54,7 +48,6 @@
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
-
 const taskStore = useTaskStore();
 // variables para los valors de los inputs
 const name = ref("");
@@ -63,58 +56,27 @@ const description = ref("");
 const showErrorMessage = ref(false);
 // const constant to save a variable that holds the value of the error message
 const errorMessage = ref(null);
-
 const emit = defineEmits(["addTitle"]);
 // Arrow function para crear tareas.
-
-const addTask = async () => {
+const addTask = () => {
   if (name.value.length < 4 || description.value.length < 4) {
-    // ...
+    // Primero comprobamos que ningún campo del input esté vacío y lanzamos el error con un timeout para informar al user.
+    showErrorMessage.value = true;
+    errorMessage.value =
+      "Te falta introducir un título y descripción de tu tarea o es muy corto";
+    setTimeout(() => {
+      showErrorMessage.value = false;
+    }, 5000);
   } else {
-    // Insertamos los datos en la tabla
-    const { data, error } = await supabase
-      .from('tasks')
-      .insert([{ name: name.value, description: description.value }])
-
-    if (error) {
-      // Mostramos el mensaje de error
-      showErrorMessage.value = true
-      errorMessage.value = error.message
-      setTimeout(() => {
-        showErrorMessage.value = false
-      }, 5000)
-    } else {
-      // Limpiamos los inputs
-      name.value = ''
-      description.value = ''
-      // Emitimos el evento para actualizar la lista de tareas
-      emit('addTitle')
-    }
+    // Aquí mandamos los valores a la store para crear la nueva Task. Esta parte de la función tenéis que refactorizarla para que funcione con emit y el addTask del store se llame desde Home.vue.
+    taskStore.addTask(name.value, description.value);
+    name.value = "";
+    description.value = "";
+    //Función que hace que se refresque la lista de tareas.
+    //Aquí hacemos el emit. Home recibirá el emit y llamará a la función getTask().
+    emit("addTitle");
   }
-}
-
-
-//CODIGO TAREAS ASK TASK COMENTADO PARA HACER PRUEBA ////
-
-// const addTask = () => {
-//   if (name.value.length < 4 || description.value.length < 4) {
-//     // Primero comprobamos que ningún campo del input esté vacío y lanzamos el error con un timeout para informar al user.
-//     showErrorMessage.value = true;
-//     errorMessage.value =
-//       "Te falta introducir un título y descripción de tu tarea o es muy corto";
-//     setTimeout(() => {
-//       showErrorMessage.value = false;
-//     }, 5000);
-//   } else {
-//     // Aquí mandamos los valores a la store para crear la nueva Task. Esta parte de la función tenéis que refactorizarla para que funcione con emit y el addTask del store se llame desde Home.vue.
-//     taskStore.addTask(name.value, description.value);
-//     name.value = "";
-//     description.value = "";
-//     //Función que hace que se refresque la lista de tareas.
-//     //Aquí hacemos el emit. Home recibirá el emit y llamará a la función getTask().
-//     emit("addTitle");
-//   }
-// };
+};
 </script>
   
   <style>

@@ -1,17 +1,16 @@
 <template>
-  <div class="container">
-
+  <div class="mainSignUp">
     <div class="header">
       <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
+        <h3 class="header-title">¿ Que esperas?</h3>
+        <p class="header-subtitle">Comienza a organizarte!</p>
       </div>
     </div>
 
     <form @submit.prevent="signUp" class="form-sign-in">
       <div class="form">
         <div class="form-input">
-          <label class="input-field-label">E-mail</label>
+          <label class="input-field-label"></label>
           <input
             type="email"
             class="input-field"
@@ -22,7 +21,7 @@
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Password</label>
+          <label class="input-field-label"></label>
           <input
             type="password"
             class="input-field"
@@ -33,7 +32,7 @@
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
+          <label class="input-field-label"></label>
           <input
             type="password"
             class="input-field"
