@@ -12,13 +12,25 @@
         <!-- <button @click=>Marcar como completada</button> -->
         <div class="buttons">
           <button @click="completedTask" class="botton1">
-            <img src="../../assets/TaskItem_Botons/comprobar.png" alt="Completar">
+            <img
+              src="../../assets/vecteezy_check-mark-icon-sign-symbol-design_10141449_805.png"
+              alt="Completar"
+            />
             <!-- {{ task.is_complete ? "No completada 😐" : "Completada!" }} -->
           </button>
+
+          <!-- boton de borrar tareas -->
+          <button @click="showModalToggle" class="botton3">
+            <img
+              src="../../assets/TaskItem_Botons/papelera_borrar.png"
+              alt="Borrar"
+            />
+          </button>
+
           
           <!-- boton para editar tareas -->
           <button @click="inputToggle" class="botton2">
-            <img src="../../assets/TaskItem_Botons/editar.png" alt="Edit">
+            
           </button>
           <div v-if="showInput">
             <div>
@@ -31,7 +43,7 @@
             </div>
             <div>
               <p>Escribe una descripción</p>
-              <input
+              <input class="nuevaTarea"
                 type="text"
                 v-model="newDescription"
                 placeholder="Introduce una nueva descripción"
@@ -40,7 +52,7 @@
             <button @click="sendData"><p>Enviar datos</p></button>
           </div>
           <!-- boton de borrar tareas -->
-          <button @click="showModalToggle" class="botton3"> <img src="../../assets/TaskItem_Botons/papelera_borrar.png" alt="Borrar"></button>
+          <button @click="showModalToggle" class="botton3"> </button>
 
           <div class="modal" v-if="showModal">
             <h2>Seguro que quieres borrar esta tarea?</h2>
@@ -98,31 +110,14 @@ const sendData = async () => {
       showErrorMess.value = false;
     }, 5000);
   } else {
-    taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
+    await taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
     showInput.value = !showInput.value;
-    emit("editChild", newTaskEdited);
+    //emit("editChild", newTaskEdited);
   }
 };
 </script>
 
 <style>
-.done {
-  /* color: green; */
-  text-decoration: line-through;
-}
-.pending {
-  /* color: red; */
-  text-decoration: none;
-}
-.buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  padding-bottom: 2vw;
-}
 </style>
   
   <!--

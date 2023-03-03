@@ -1,36 +1,14 @@
 <template>
   <nav class="menu">
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <img
-      class="navbar-img"
-      src="/assets/logowu3.png"
-      alt=""
-    />
+    
     <router-link class="links-visitados" to="/"
       ><a class="fancy" href="#">
         <span class="top-key"></span>
         <span class="text">Inicio</span>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
+        
       </a>
     </router-link>
-
-    <!-- Esto es el menú central del navegador 
-    <div class="">
-      <ul>
-        <li>
-          <button class="button-nav"> -
-          <router-link class="links-visitados" to="/reloj"
-            ><a class="fancy" href="#">
-              <span class="top-key"></span>
-              <span class="text">Reloj</span>
-              <span class="bottom-key-1"></span>
-              <span class="bottom-key-2"></span> </a
-          ></router-link>
-          
-        </li>
-      </ul>
-    </div> -->
     <div class="">
       <ul>
         <li>
@@ -48,7 +26,7 @@
     <div class="log-out">
       <ul>
         <li>
-          <p>Welcome back, <span class="gradient-text">{{ user.email }}</span></p>
+          <p>Hola! <span class="gradient-text">{{ user.email }}</span></p>
         </li>
         <li>
           <a @click="signOut" class="fancy" href="#">
@@ -96,35 +74,4 @@ const signOut = async () => {
 
 <style>
 
-.menu {
-  height: 15vh;
-  border: solid 1px red;
-}
-
-.navbar-img {
-  width: 5vw;
-}
-
-.menu-central ul {
-  display: flex;
-  flex-direction: row;
-  gap: 15vw;
-  border: solid 1px red;
-}
-
-nav {
-  background-color: lightgray;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  padding-inline-start: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 </style>

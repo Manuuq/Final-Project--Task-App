@@ -1,21 +1,12 @@
 <template>
     <div class="footer">
-      <p>Footer por confeccionar aun</p>
+      <h4> To-Do App. All rights reserved.</h4>
     </div>
   </template>
   
   <script setup></script>
   
   <style scoped>
-  .footer {
-    margin-top: 5vh;
-    width: 100vw;
-    height: 15vh;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: aliceblue;
-  }
+  
   </style>
   

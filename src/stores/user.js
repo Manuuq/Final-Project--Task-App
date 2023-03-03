@@ -42,7 +42,7 @@ export const useUserStore = defineStore("user", {
       }
     },
 
-    //TRAER INFO DE LA TABLA DE PROFILES DE SUPABASE
+    //INFO PERFIL ALMACENADA EN SUPABASE
     async editProfile(username, website, name, avatar_url) {
       let { data, error } = await supabase
         .from("profiles")
@@ -72,7 +72,6 @@ export const useUserStore = defineStore("user", {
         .match({ user_id: this.user.id })
 
         if (profile) this.profile = profile[0];
-        /*console.log('profile in store: ', profile);*/
       }
     },
 

@@ -25,7 +25,6 @@
     <!-- Add to body -->
     <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" />
 
-    <!-- Other form elements -->
   </form>
     <FooterComp />
   </div>
@@ -75,15 +74,4 @@ const editProfileButton = () => {
 
 <style>
      
-.fondoperfil h2 {
-  right: 50vw;
-  top: 30vh;
-}
-.avatarProfile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 6vh;
-}
 </style>
